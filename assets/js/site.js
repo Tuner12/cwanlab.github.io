@@ -33,52 +33,57 @@ document.querySelectorAll('.filters').forEach((bar) => {
   search?.addEventListener('input', apply);
 });
 
-// Logo: modelled on the idl.uw.edu mark. Touching a letter cell pushes every cell
-// away from the cursor (nearer cells fly further), then they ease straight back.
-// A faint ghost copy stays in place underneath.
+// Logo: a port of the idl.uw.edu mark, which is a tiny d3-force simulation.
+// The cursor is a fixed node with charge -100 (acting between 10 and 40 screen px);
+// every cell is tied to its home spot by a zero-length link of strength 0.3.
+// Cells are pushed live while the pointer moves and spring home when it leaves.
+// Constants and integration follow d3-force defaults so the feel matches.
 const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.querySelectorAll('.logo-cw').forEach((svg) => {
-  const dots = [...svg.querySelectorAll('circle.d')].map((el) => ({
-    el, x: +el.getAttribute('cx'), y: +el.getAttribute('cy'), dx: 0, dy: 0,
-  }));
-  const RISE = 45, FALL = 280;          // ms, measured on the IDL logo
-  const HIT = 6;                        // how close (in grid units) counts as touching a cell
-  let start = -1e9, frame = 0, onCell = false;
+  if (still) return;
+  const CHARGE = -100, DMIN = 10, DMAX = 40, LINK = 0.3;   // px, as on idl.uw.edu
+  const ALPHA_MIN = 0.001, ALPHA_DECAY = 1 - ALPHA_MIN ** (1 / 300), KEEP = 0.6;
+  const cells = [...svg.querySelectorAll('circle.d')].map((el) => {
+    const hx = +el.getAttribute('cx'), hy = +el.getAttribute('cy');
+    return { el, hx, hy, x: hx, y: hy, vx: 0, vy: 0 };
+  });
+  let px = 1;                          // screen px per viewBox unit
+  let cx = 1e4, cy = 1e4, alpha = 0, running = false;
 
-  const local = (e) => new DOMPoint(e.clientX, e.clientY).matrixTransform(svg.getScreenCTM().inverse());
-  const nearest = (p) => Math.min(...dots.map((d) => Math.hypot(d.x - p.x, d.y - p.y)));
-
-  const step = (now) => {
-    const t = now - start;
-    const k = t < RISE ? 1 - (1 - t / RISE) ** 2          // ease out to the peak
-      : Math.max(0, 1 - (t - RISE) / FALL) ** 2;          // quadratic ease-out home
-    dots.forEach((d) => d.el.setAttribute('transform', k > 0.001 ? `translate(${(d.dx * k).toFixed(2)} ${(d.dy * k).toFixed(2)})` : ''));
-    frame = t < RISE + FALL ? requestAnimationFrame(step) : 0;
+  const tick = () => {
+    alpha += -alpha * ALPHA_DECAY;
+    const s = CHARGE / (px * px), dmin2 = (DMIN / px) ** 2, dmax2 = (DMAX / px) ** 2;
+    cells.forEach((c) => {
+      // charge: only the cursor repels
+      let x = cx - c.x, y = cy - c.y, l = x * x + y * y;
+      if (l < dmax2) {
+        if (l < dmin2) l = Math.sqrt(dmin2 * l) || 1e-6;
+        const w = s * alpha / l;
+        c.vx += x * w; c.vy += y * w;
+      }
+      // link: spring back to the home spot (fixed node, bias 0.5)
+      x = c.hx - c.x - c.vx; y = c.hy - c.y - c.vy;
+      if (x || y) { c.vx += x * alpha * LINK * 0.5; c.vy += y * alpha * LINK * 0.5; }
+      c.x += (c.vx *= KEEP); c.y += (c.vy *= KEEP);
+      // snap to whole screen pixels, like the original
+      const dx = Math.round((c.x - c.hx) * px) / px, dy = Math.round((c.y - c.hy) * px) / px;
+      c.el.setAttribute('transform', dx || dy ? `translate(${dx} ${dy})` : '');
+    });
+    if (alpha >= ALPHA_MIN) requestAnimationFrame(tick); else running = false;
   };
 
-  const burst = (p) => {
-    const now = performance.now();
-    if (still || now - start < RISE + FALL) return;
-    dots.forEach((d) => {
-      let vx = d.x - p.x, vy = d.y - p.y;
-      const dist = Math.hypot(vx, vy);
-      if (dist < 1) { const a = Math.random() * Math.PI * 2; vx = Math.cos(a); vy = Math.sin(a); }
-      else { vx /= dist; vy /= dist; }
-      const push = 37 / (1 + dist / 30) * (0.8 + Math.random() * 0.4);
-      d.dx = vx * push + (Math.random() - 0.5) * 3;
-      d.dy = vy * push + (Math.random() - 0.5) * 3;
-    });
-    start = now;
-    if (!frame) frame = requestAnimationFrame(step);
+  const point = (x, y) => {
+    cx = x; cy = y; alpha = 1;
+    if (!running) { running = true; requestAnimationFrame(tick); }
+  };
+  const local = (e) => {
+    const m = svg.getScreenCTM();
+    px = m.a;
+    return new DOMPoint(e.clientX, e.clientY).matrixTransform(m.inverse());
   };
 
   const host = svg.closest('a') || svg;
-  host.addEventListener('pointermove', (e) => {
-    const p = local(e);
-    const hit = nearest(p) < HIT;
-    if (hit && !onCell) burst(p);       // like IDL: fires on entering a cell
-    onCell = hit;
-  });
-  host.addEventListener('pointerleave', () => { onCell = false; });
-  host.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') burst(local(e)); });
+  host.addEventListener('pointermove', (e) => { const p = local(e); point(p.x, p.y); });
+  host.addEventListener('pointerdown', (e) => { const p = local(e); point(p.x, p.y); });
+  host.addEventListener('pointerout', () => point(1e4, 1e4));
 });

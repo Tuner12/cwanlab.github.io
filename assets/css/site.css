@@ -40,7 +40,8 @@ strong, b { font-weight: 700; }
 /* ---------- Shell: sidebar + main ---------- */
 .shell { display: grid; grid-template-columns: 160px minmax(0, 800px); justify-content: center; padding: 0 32px; gap: 56px; }
 .sidebar { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; padding: 40px 0 32px; }
-.side-logo { display: block; width: 72px; }
+/* invisible padding: the logo reacts as the cursor approaches, as on idl.uw.edu */
+.side-logo { display: block; width: 72px; padding: 24px; margin: -24px; box-sizing: content-box; touch-action: none; }
 .logo-cw { display: block; width: 100%; height: auto; overflow: visible; }
 .nav { display: flex; flex-direction: column; gap: 4px; margin-top: 40px; }
 .nav a { font-size: 12.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); padding: 4px 0; line-height: 1.4; }
@@ -56,7 +57,7 @@ strong, b { font-weight: 700; }
 .masthead-title .accent { color: var(--maroon); font-weight: 700; }
 .masthead-title .zh { font-size: 15px; font-weight: 400; color: var(--muted); letter-spacing: .2em; margin-left: 12px; }
 .masthead-tag { font-size: 12.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-.masthead-logo { display: none; margin-left: auto; width: 46px; flex: none; }
+.masthead-logo { display: none; margin: -14px -14px -14px auto; padding: 14px; width: 60px; box-sizing: content-box; flex: none; touch-action: none; }
 
 /* ---------- Shared headings ---------- */
 /* Three distinct tiers: page h1 (24 bold, sentence case) > section label (12.5 caps + hairline) > item title (16 bold). */
