@@ -1,0 +1,50 @@
+---
+title: Research
+permalink: /publications/
+redirect_from:
+  - /research/
+eyebrow: Research & Publications
+lede: We build interpretable AI for spatial biology and precision oncology — from new algorithms to tools that clinicians can use.
+---
+<div class="grid-3 compact">
+  {% for t in site.data.research.themes %}
+  <article class="card theme theme-{{ forloop.index }}">
+    <span class="theme-num">0{{ forloop.index }}</span>
+    <h3>{{ t.title }}</h3>
+    <ul class="ticks">{% for i in t.items %}<li>{{ i }}</li>{% endfor %}</ul>
+  </article>
+  {% endfor %}
+</div>
+
+<div class="section-head pubs-head">
+  <h2>Publications</h2>
+  <a class="more" href="{{ site.pi.scholar }}">Full list on Google Scholar →</a>
+</div>
+
+<div class="filters" data-filter-target=".pub" role="group" aria-label="Filter publications">
+  <button class="chip" aria-pressed="true" data-filter="all">All</button>
+  {% for g in site.data.research.groups %}
+  <button class="chip" aria-pressed="false" data-filter="{{ g.id }}">{{ g.title }}</button>
+  {% endfor %}
+  <input class="search" type="search" placeholder="Search title, author, venue…" aria-label="Search publications">
+</div>
+
+{% for g in site.data.research.groups %}
+<section class="pub-group" data-group="{{ g.id }}">
+  <h3 class="group-title">{{ g.title }}</h3>
+  <ol class="pubs">
+    {% for p in site.data.publications %}{% if p.group == g.id %}
+    <li class="pub{% if p.featured %} featured{% endif %}" data-tag="{{ p.group }}">
+      <div class="pub-year">{{ p.year }}</div>
+      <div>
+        <p class="pub-title">{{ p.title }}</p>
+        <p class="pub-authors">{{ p.authors | replace: "G. Wan", "<strong>G. Wan</strong>" }}</p>
+        <p class="pub-venue"><em>{{ p.venue }}</em>, {{ p.year }}{% if p.equal %} <span class="muted">· *equal contribution</span>{% endif %}</p>
+        {% if p.links %}<p class="pub-links">{% for l in p.links %}<a href="{{ l[1] }}">{{ l[0] }}</a>{% endfor %}</p>{% endif %}
+      </div>
+    </li>
+    {% endif %}{% endfor %}
+  </ol>
+</section>
+{% endfor %}
+<p class="empty muted" hidden>No publications match your search.</p>

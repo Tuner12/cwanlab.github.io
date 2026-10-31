@@ -1,0 +1,59 @@
+---
+title: People
+permalink: /group/
+redirect_from:
+  - /people/
+eyebrow: The team
+lede: Computer scientists, clinicians, and students working together on AI for precision medicine.
+---
+<div class="card pi-wide">
+  <img src="{{ site.pi.photo | relative_url }}" alt="{{ site.pi.name }}" width="120" height="120">
+  <div>
+    <p class="label">Principal Investigator</p>
+    <h2>{{ site.pi.name }}</h2>
+    <p class="muted">{{ site.pi.title }}, {{ site.pi.employer }} · {{ site.pi.note }}</p>
+    <p class="pill-links">
+      <a href="{{ '/cv/' | relative_url }}">Bio & CV</a>
+      <a href="mailto:{{ site.pi.email }}">Email</a>
+      <a href="{{ site.pi.scholar }}">Google Scholar</a>
+    </p>
+  </div>
+</div>
+
+{% for g in site.data.members.groups %}
+<h2 class="group-title">{{ g.title }}</h2>
+<div class="people">
+  {% for m in g.people %}
+  {% assign parts = m.name | split: " " %}
+  <article class="person">
+    {% if m.photo %}
+      <img class="avatar" src="{{ m.photo | relative_url }}" alt="{{ m.name }}">
+    {% else %}
+      <span class="avatar initials a{{ forloop.index | modulo: 5 }}" aria-hidden="true">{{ parts.first | slice: 0 }}{{ parts.last | slice: 0 }}</span>
+    {% endif %}
+    <div>
+      <h3>{{ m.name }}{% if m.degree %}, {{ m.degree }}{% endif %}</h3>
+      <p class="muted small">{{ m.role }} · since {{ m.since }}</p>
+      {% if m.note %}<p class="small">{{ m.note }}</p>{% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endfor %}
+
+<h2 class="group-title">Alumni</h2>
+<ul class="alumni">
+  {% for a in site.data.members.alumni %}
+  <li>
+    <span class="alum-year">{{ a.year }}</span>
+    <div><strong>{{ a.name }}</strong> <span class="muted">— {{ a.was }}</span><br>
+    <span class="next">→ {{ a.next }}</span></div>
+  </li>
+  {% endfor %}
+</ul>
+
+<div class="card join">
+  <p class="label">Join us</p>
+  <p>We are recruiting postdoctoral researchers and research assistants in AI, LLMs, and spatial biology, and welcome UChicago students interested in research. Curious what working here is like? Read our <a href="{{ '/lab-life/' | relative_url }}">Lab Life</a> page.</p>
+  <a class="btn small" href="mailto:{{ site.pi.email }}?subject=Joining%20CWan%20Lab">Get in touch</a>
+</div>

@@ -1,16 +1,15 @@
-{% include base_path %}
-
-{% if site.author.github or site.author.bitbucket or site.atom_feed.hide != true %}
-<div class="page__footer-follow">
-  <ul class="social-icons">
-    {% if site.data.ui-text[site.locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-    {% endif %}
-    {% if site.author.github %}
-      <li><a href="http://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
-    {% endif %}
-  </ul>
-</div>
-{% endif %}
-
-<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>.</div>
+<footer class="site-foot">
+  <div class="wrap foot-inner">
+    <div>
+      <p class="foot-title">{{ site.title }} <span>{{ site.title_zh }}</span></p>
+      <p>{{ site.affiliation }}</p>
+    </div>
+    <div class="foot-links">
+      <a href="mailto:{{ site.pi.email }}">Email</a>
+      <a href="{{ site.pi.scholar }}">Google Scholar</a>
+      <a href="https://github.com/{{ site.pi.github }}">GitHub</a>
+      <a href="{{ '/lab-life/' | relative_url }}">Lab Life</a>
+    </div>
+  </div>
+  <div class="wrap foot-small">© {{ site.time | date: "%Y" }} {{ site.title }}. Built with Jekyll on GitHub Pages.</div>
+</footer>

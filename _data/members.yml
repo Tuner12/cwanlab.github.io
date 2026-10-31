@@ -1,0 +1,56 @@
+# Add `photo: /images/people/<file>.jpg` to show a photo instead of initials.
+# Optional: `links` (map of label -> URL), `note`.
+
+groups:
+  - title: Postdoctoral Scholars
+    people:
+      - name: Running Zhao
+        role: Postdoctoral Scholar
+        since: 2026
+        degree: PhD
+      - name: Xinxing Yang
+        role: Postdoctoral Scholar
+        since: 2026
+        degree: PhD
+  - title: Research Assistants
+    people:
+      - name: Sofia Angel
+        role: Research Assistant (Clinical)
+        since: 2027
+      - name: Yusheng Tan
+        role: Research Assistant (Computational)
+        since: 2026
+  - title: Students
+    people:
+      - name: Ninghui Hao
+        role: PhD Student
+        since: 2026
+        note: External PhD advisor
+      - name: Ash Arian
+        role: MD Student
+        since: 2026
+      - name: Adam Kamel
+        role: Undergraduate Student
+        since: 2026
+
+alumni:
+  - name: Sihao Feng
+    year: 2025
+    was: MS student in Statistics, University of Chicago
+    next: PhD student (Biostatistics), Yale University
+  - name: Ninghui Hao
+    year: 2024
+    was: Master of Biomedical Informatics student, Harvard Medical School
+    next: PhD student (Computer Science), University of Texas at Dallas
+  - name: Boshen Yan
+    year: 2023
+    was: Master of Biomedical Informatics student, Harvard Medical School
+    next: PhD student (Computational Biology), Carnegie Mellon University
+  - name: Wenxin Chen
+    year: 2022
+    was: Master of Biomedical Informatics student, Harvard Medical School
+    next: PhD student (Computer Science), Cornell University
+  - name: Shijia Zhang
+    year: 2021
+    was: Master of Biomedical Informatics student, Harvard Medical School
+    next: PhD student (Biomedical Informatics and Data Science), Johns Hopkins University

@@ -1,0 +1,56 @@
+# Lab Life page data.
+# Items with `draft: true` are proposals that still need the PI's confirmation;
+# they show a small "Draft" badge. Remove the flag once confirmed.
+
+rhythm:
+  - when: Weekly
+    what: Project meeting
+    detail: Research and proposal discussion, plans, and progress updates.
+  - when: Biweekly
+    what: Lab meeting / Journal club
+    detail: Paper presentations and administrative matters.
+  - when: Monthly
+    what: One-on-one with the PI
+    detail: Career development, goals, and anything else on your mind.
+  - when: As needed
+    what: Ad hoc discussions
+    detail: Short focused sessions on research ideas and proposals.
+
+activities:
+  - icon: lunch
+    title: Lab lunch
+    detail: A relaxed lunch together after lab meeting — a chance to talk about anything but deadlines.
+    when: Monthly (time & place TBD)
+    draft: true
+  - icon: cake
+    title: Celebrations
+    detail: We celebrate paper acceptances, awards, graduations, and birthdays — usually with cake or a team meal.
+    when: When there is good news
+    draft: true
+  - icon: welcome
+    title: Welcome & farewell dinners
+    detail: Every new member gets a welcome dinner; every departing member gets a proper send-off.
+    when: As people join or leave
+    draft: true
+  - icon: outing
+    title: Seasonal outing
+    detail: A quarterly team activity in Chicago — lakefront walk, museum, picnic, or a game night.
+    when: Once a quarter
+    draft: true
+  - icon: coffee
+    title: Coffee & tea
+    detail: Shared coffee and snacks at journal club. Take turns bringing something to share.
+    when: Biweekly
+    draft: true
+  - icon: paper
+    title: Submission wrap-up
+    detail: After a major paper or proposal goes out, the team takes a break together — vacations are encouraged right after big submissions.
+    when: After major deadlines
+    draft: true
+
+onboarding:
+  - Get added to the lab's shared storage on UChicago Box and the lab GitHub organization.
+  - Put every project's data and code in Box / GitHub from day one so results are reproducible.
+  - Complete the COI–COC training and submit your conflict-of-interest / conflict-of-commitment disclosure in AURA.
+  - Read the lab guidelines below, including the authorship and responsible-research rules.
+  - Set up your first one-on-one with the PI to agree on goals and a first project.

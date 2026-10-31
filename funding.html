@@ -1,0 +1,19 @@
+---
+title: Funding
+permalink: /funding/
+eyebrow: Support
+lede: Our work is made possible by the following awards.
+---
+<ol class="timeline">
+  {% for f in site.data.funding %}
+  <li class="card fund{% if f.active %} active{% endif %}">
+    <div class="fund-top">
+      <p class="label">{{ f.sponsor }}</p>
+      <span class="status">{% if f.active %}Active{% else %}Completed{% endif %}</span>
+    </div>
+    <h3>{{ f.award }}</h3>
+    <p>{{ f.project }}</p>
+    <p class="muted small">{{ f.role }}: Guihong Wan · {{ f.period }}</p>
+  </li>
+  {% endfor %}
+</ol>

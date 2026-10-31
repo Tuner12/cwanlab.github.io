@@ -1,0 +1,11 @@
+<svg class="icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+{% case include.name %}
+{% when "lunch" %}<path d="M4 3v8a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V3M6 3v18M17 3c-2 0-3 2.5-3 6s1 4 3 4v8"/>
+{% when "cake" %}<path d="M4 21h16M5 21v-7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7M5 16c2 1.5 4.5 1.5 7 0s5-1.5 7 0M12 12V8M12 5.5a1 1 0 1 0 0-.01"/>
+{% when "welcome" %}<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M19 8v6M22 11h-6"/>
+{% when "outing" %}<path d="M3 20l6-10 4 6 3-4 5 8H3zM16 6a2 2 0 1 0 0-.01"/>
+{% when "coffee" %}<path d="M17 8h1a3 3 0 0 1 0 6h-1M3 8h14v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8zM7 2v3M11 2v3"/>
+{% when "paper" %}<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M9 15l2 2 4-4"/>
+{% else %}<circle cx="12" cy="12" r="9"/>
+{% endcase %}
+</svg>

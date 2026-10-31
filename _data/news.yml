@@ -1,0 +1,160 @@
+# Newest first. `date` is shown as written; `tag` picks the badge colour
+# (paper, award, people, talk, funding). `text` accepts Markdown links.
+
+- date: "Oct 2026"
+  tag: paper
+  text: 'Our paper "Toward Personalized Sleep Guidance from Wearable Data Using Language Models" has been accepted by **Machine Learning for Health (ML4H) 2026**.'
+- date: "Oct 2026"
+  tag: talk
+  text: "Dr. Wan will serve as a grant reviewer for the DOD."
+- date: "Sep 2026"
+  tag: talk
+  text: "Dr. Wan will give a guest lecture on clinical data analysis at Harvard Medical School on November 6th."
+- date: "Sep 2026"
+  tag: talk
+  text: "Dr. Wan will give a research talk on spatial biology at Northwestern University on October 7th."
+- date: "Jul 2026"
+  tag: funding
+  text: 'Our team science project "Explainable Artificial Intelligence for the Prediction of Melanoma Progression and Survival" has been selected for funding.'
+- date: "Jun 2026"
+  tag: paper
+  text: 'Our paper "Histopathology-centered Computational Analysis of Spatial Omics: Integration, Mapping, and Foundation Models" has been accepted by **Briefings in Bioinformatics**.'
+- date: "May 2026"
+  tag: paper
+  text: 'Our paper "A survey on computational pathology foundation models: Datasets, adaptation strategies, and evaluation tasks" has been accepted by **KAIS**.'
+- date: "May 2026"
+  tag: talk
+  text: 'Our tutorial "AI for Precision Medicine: Histopathology-centered Computational Analysis of Spatial Omics: Integration, Mapping, and Foundation Models" has been accepted by **KDD 2026**.'
+- date: "May 2026"
+  tag: people
+  text: "Dr. Zhao has joined the lab as a postdoctoral scholar. Welcome!"
+- date: "Apr 2026"
+  tag: paper
+  text: 'Our paper "Systemic Glucocorticoids and Survival Among Immune Checkpoint Inhibitor Recipients" has been accepted by **JAMA Network Open**.'
+- date: "Mar 2026"
+  tag: people
+  text: "Dr. Yang has joined the lab as a postdoctoral scholar. Welcome!"
+- date: "Feb 2026"
+  tag: paper
+  text: 'Two studies ("A Multi-Agent AI System for Diagnostic and Therapeutic Decision-Making in Dermatology" and "Fair and Generalizable AI for Skin Lesion Diagnosis") were accepted for presentation at the **Society for Investigative Dermatology 2026 Annual Meeting**.'
+- date: "Jan 2026"
+  tag: people
+  text: "Dr. Wan has joined the University of Chicago as a **tenure-track Assistant Professor**."
+
+- date: "Nov 10, 2025"
+  tag: paper
+  text: 'Our paper "Multi-Modal Foundation Models for Computational Pathology: A Survey" has been accepted by **Transactions on Machine Learning Research**.'
+- date: "Sep 13, 2025"
+  tag: talk
+  text: 'Our tutorial "AI for Precision Medicine: Integrative Analysis of Histopathology Images and Spatial Omics" has been accepted at **IEEE ICDM** (November 14th, 2025). [Website](https://sites.google.com/view/icdm25tutorial-ai4pm/main)'
+- date: "Sep 13, 2025"
+  tag: talk
+  text: 'Our tutorial "Computational Pathology Foundation Models: Datasets, Adaptation Strategies, and Evaluations" has been accepted at **IEEE ICDM** (November 14th, 2025).'
+- date: "Sep 5, 2025"
+  tag: talk
+  text: 'Our tutorial "Computational Pathology Foundation Models: Datasets, Adaptation Strategies, and Evaluations" has been accepted at **AAAI 2026** (January 21st, 2026). [Website](https://sites.google.com/view/aaai26tutorial-cpath/home)'
+- date: "Aug 18, 2025"
+  tag: talk
+  text: 'Our tutorial "Computational Pathology Foundation Models: Datasets, Adaptation Strategies, and Evaluations" was presented at **IJCAI 2025**. [Website](https://sites.google.com/view/ijcai25-tutorial-cpath/home) · [Slides](https://drive.google.com/file/d/1MMXEVfxjoCdFsAZIRsIAR6m9kJol4MId/view)'
+- date: "Jun 10, 2025"
+  tag: talk
+  text: 'Our tutorial "Computational Pathology Foundation Models: Datasets, Adaptation Strategies, and Evaluations" was presented at **PAKDD 2025**. [Website](https://sites.google.com/view/pakdd25tutorial/home)'
+- date: "Apr 29, 2025"
+  tag: paper
+  text: 'Our paper "FADE: Towards Fairness-aware Data Generation for Domain Generalization via Classifier-Guided Score-based Diffusion Models" has been accepted by **IJCAI 2025**.'
+- date: "Apr 23, 2025"
+  tag: paper
+  text: 'Our paper "Long-term mortality outcomes among immunotherapy recipients treated with dupilumab for the management of cutaneous immune-related adverse events" has been accepted by the **Journal for ImmunoTherapy of Cancer**.'
+- date: "Feb 21, 2025"
+  tag: talk
+  text: 'Our study "Survival implications of systemic immunosuppression timing, dosage, and duration in immune checkpoint inhibitor therapy: A retrospective multicohort study" was accepted for an **oral presentation** at the 2025 SID Annual Meeting.'
+
+- date: "Oct 30, 2024"
+  tag: paper
+  text: 'Our work "Multi-View Unsupervised Column Subset Selection via Combinatorial Search" has been accepted by the **AAAI 2025** Student Abstract Program.'
+- date: "May 13, 2024"
+  tag: paper
+  text: 'Our paper "Multi-organ toxicities from immune checkpoint blockade and their downstream implications: a retrospective multi-cohort study" has been accepted by **The Lancet Oncology**! [Paper](https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(24)00278-X/abstract) · [Press](https://www.massgeneral.org/news/research-spotlight/patterns-prognostications-immune-related-adverse-events)'
+- date: "Apr 2, 2024"
+  tag: paper
+  text: 'Our paper "SpatialCells: automated profiling of tumor microenvironments with spatially resolved multiplexed single-cell data" has been accepted by **Briefings in Bioinformatics**! [Paper](https://academic.oup.com/bib/article/25/3/bbae189/7663435) · [Code](https://semenovlab.github.io/SpatialCells/)'
+- date: "Feb 23, 2024"
+  tag: talk
+  text: 'Our study "Individualized melanoma risk prediction using machine learning with electronic health records" was accepted for an **oral presentation** at the 2024 SID Annual Meeting.'
+- date: "Feb 9, 2024"
+  tag: award
+  text: "Dr. Wan received the **NIH/NCI K99 Career Development Award**!"
+- date: "Feb 5, 2024"
+  tag: people
+  text: "Boshen was admitted to the PhD program in Computational Biology at Carnegie Mellon University. Congratulations!"
+- date: "Feb 2, 2024"
+  tag: paper
+  text: 'Our paper "Cancer Type and Histology Influence Cutaneous Immunotherapy Toxicities: A Multi-Institutional Cohort Study" has been accepted by the **British Journal of Dermatology**! [Paper](https://academic.oup.com/bjd/advance-article-abstract/doi/10.1093/bjd/ljae053/7608988)'
+- date: "Feb 1, 2024"
+  tag: paper
+  text: 'Our paper "Identification of breast cancer subtypes based on graph convolutional network" has been published by the **Journal of Biomedical Engineering**!'
+- date: "Feb 1, 2024"
+  tag: award
+  text: "Dr. Wan has been promoted to **Instructor at Harvard Medical School**!"
+
+- date: "Nov 14, 2023"
+  tag: paper
+  text: 'Our paper "Spectral Pursuit for Simultaneous Sparse Representation with Accuracy Guarantees" has been accepted by the **International Journal of Data Science and Analytics**! [Paper](https://link.springer.com/article/10.1007/s41060-023-00480-y)'
+- date: "Oct 30, 2023"
+  tag: paper
+  text: "Three abstracts were accepted by the **AAAI-2024** Student Abstract and Poster Program."
+- date: "Sep 11, 2023"
+  tag: paper
+  text: 'Our paper "Pre-Existing Inflammatory Disease Predicts Cutaneous Immunotherapy Toxicity Development: A Multi-Institutional Cohort Study" has been accepted by the **Journal of the American Academy of Dermatology**!'
+- date: "Aug 28, 2023"
+  tag: paper
+  text: 'Our paper "Development and Validation of Time-to-Event Models to Predict Metastatic Recurrence of Localized Cutaneous Melanoma" has been accepted by the **Journal of the American Academy of Dermatology**! [Paper](https://www.sciencedirect.com/science/article/pii/S0190962223028815)'
+- date: "Aug 22, 2023"
+  tag: paper
+  text: 'Our paper "The Art of Centering Without Centering for Robust Principal Component Analysis" has been accepted by **Data Mining and Knowledge Discovery**! [Paper](https://link.springer.com/article/10.1007/s10618-023-00976-y)'
+- date: "Jun 17, 2023"
+  tag: award
+  text: "Dr. Wan received **an impact score of 15** for her NIH/NCI K99 application!"
+- date: "Apr 17, 2023"
+  tag: paper
+  text: 'Our paper "A polygenic risk score for predicting racial and genetic susceptibility to prurigo nodularis" has been accepted by the **Journal of Investigative Dermatology**! [Paper](https://www.sciencedirect.com/science/article/abs/pii/S0022202X23021255)'
+- date: "Mar 10, 2023"
+  tag: award
+  text: "Dr. Wan received **a scholarship of $80,500** from the Harvard T.H. Chan School of Public Health."
+- date: "Mar 9, 2023"
+  tag: people
+  text: "Dr. Wan was admitted to the M.S. program in Computational Biology and Quantitative Genetics at the Harvard T.H. Chan School of Public Health."
+- date: "Feb 3, 2023"
+  tag: paper
+  text: 'Our paper "Increased Risk of Cutaneous Immune-Related Adverse Events in Patients Treated with Talimogene Laherparepvec and Immune Checkpoint Inhibitors: A Multi-institutional Cohort Study" has been accepted by the **Journal of the American Academy of Dermatology**! [Paper](https://www.sciencedirect.com/science/article/abs/pii/S0190962223002682)'
+- date: "Feb 2, 2023"
+  tag: paper
+  text: 'Our paper "Influence of melanoma type on incidence and downstream implications of cutaneous immune-related adverse events in the setting of immune checkpoint inhibitor therapy" has been accepted by the **Journal of the American Academy of Dermatology**! [Paper](https://www.sciencedirect.com/science/article/abs/pii/S0190962223002049)'
+
+- date: "Dec 19, 2022"
+  tag: award
+  text: "Dr. Wan received the **MGH Fund for Medical Discovery (FMD) Clinical Research Fellowship Award**!"
+- date: "Dec 15, 2022"
+  tag: paper
+  text: 'Our paper "Cutaneous immune-related adverse events are associated with longer overall survival in advanced cancer patients on immune checkpoint inhibitors: a multi-institutional cohort study" has been accepted by the **Journal of the American Academy of Dermatology**! [Paper](https://www.sciencedirect.com/science/article/pii/S0190962223001536)'
+- date: "Nov 19, 2022"
+  tag: paper
+  text: 'Our paper "Electrophysiological Brain Source Imaging via Combinatorial Search with Provable Optimality" has been accepted by **AAAI 2023**! [Paper](https://ojs.aaai.org/index.php/AAAI/article/view/26471)'
+- date: "Nov 4, 2022"
+  tag: talk
+  text: "Our research was featured in [The Harvard Gazette](https://news.harvard.edu/gazette/story/2022/11/ai-tool-predicts-melanoma-survivors-risk-of-recurrence/)."
+- date: "Oct 16, 2022"
+  tag: award
+  text: 'Our study "Anytime Combinatorial Search for Matrix Sparse Representation" won **second place** in the Best Paper Competition at the 17th INFORMS Workshop on Data Mining and Decision Analytics.'
+- date: "Sep 20, 2022"
+  tag: paper
+  text: 'Our paper "Prediction of Early-Stage Melanoma Recurrence Using Clinical and Histopathologic Features" has been accepted by **npj Precision Oncology**! [Paper](https://www.nature.com/articles/s41698-022-00321-4)'
+- date: "Sep 11, 2022"
+  tag: award
+  text: 'Our study "Anytime Combinatorial Search for Matrix Sparse Representation" was selected as a **Best Paper Finalist** (theoretical track) at the 17th INFORMS Workshop on Data Mining and Decision Analytics.'
+- date: "Aug 29, 2022"
+  tag: paper
+  text: 'Our paper "Germline variants associated with toxicity to immune checkpoint blockade" has been accepted by **Nature Medicine**!'
+- date: "Jul 15, 2022"
+  tag: award
+  text: "Dr. Wan received the **2022 Dermatology Fellowship Award from the Melanoma Research Alliance**!"

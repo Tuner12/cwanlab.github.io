@@ -1,0 +1,31 @@
+themes:
+  - id: graph
+    title: Graph and Deep Learning for Biomedical Data
+    blurb: Learning representations that respect the structure of biology and medicine.
+    items:
+      - Graph Neural Networks and Biomedical Knowledge Graphs
+      - Self-Supervised and Contrastive Representation Learning
+      - Large Language and Vision Models (LLMs and LVMs) for Biomedical Applications
+  - id: spatial
+    title: Computational Geometry and Spatial Biology
+    blurb: Modeling how cells are arranged in tissue, and what that arrangement means for disease.
+    items:
+      - Geometric Algorithms for Modeling Tissue Microenvironments and Cell-Cell Interactions
+      - Single-Cell Spatial Analysis and Interpretation
+      - 3D Spatial Modeling Methods for Tissue and Cellular Structures
+  - id: clinical
+    title: Multimodal Integration and Clinical Decision Support
+    blurb: Bringing records, images and omics together to support decisions at the bedside.
+    items:
+      - Integrative Methods for Combining EHRs, Histopathology, and Spatial Multi-Omics
+      - Predictive Modeling for Treatment Response and Disease Progression
+      - Real-Time Clinical Decision Support under Uncertainty
+
+# Publication groups, in display order.
+groups:
+  - id: aim
+    title: Artificial Intelligence in Medicine
+  - id: graph
+    title: Graph Learning and Combinatorial Optimization
+  - id: clinical
+    title: Clinical Informatics and Genetics

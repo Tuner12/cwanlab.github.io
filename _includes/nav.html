@@ -1,0 +1,18 @@
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img src="{{ site.logo | relative_url }}" alt="" width="34" height="34">
+      <span><strong>{{ site.title }}</strong><small>{{ site.title_zh }}</small></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav-links" class="nav-links" aria-label="Main">
+      {% for item in site.nav %}
+        {% assign active = false %}
+        {% if page.url == item.url or page.nav_parent == item.url %}{% assign active = true %}{% endif %}
+        <a href="{{ item.url | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

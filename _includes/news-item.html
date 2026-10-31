@@ -1,0 +1,4 @@
+<li class="news-item">
+  <time>{{ include.n.date }}</time>
+  <div><span class="tag tag-{{ include.n.tag }}">{{ include.n.tag }}</span> {{ include.n.text | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+</li>

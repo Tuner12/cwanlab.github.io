@@ -1,0 +1,183 @@
+# group: aim | graph | clinical  (see _data/research.yml)
+# "G. Wan" is highlighted automatically. Use * for equal contribution.
+
+- group: aim
+  year: 2024
+  featured: true
+  authors: "G. Wan, W. Chen, S. Khattab, K. Roster, N. Nguyen, B. Yan, A. Rajeh, J. Seo, H. Rashdan, L. Zubiri, M. J. Hadfield, S. Demehri, K-H Yu, W. Lotter, A. Gusev, N. R. LeBoeuf, K. L. Reynolds, S. G. Kwatra, Y. R. Semenov"
+  title: "Multi-organ immune-related adverse events from immune checkpoint inhibitors and their downstream implications: a retrospective multicohort study"
+  venue: "The Lancet Oncology"
+  links:
+    Paper: "https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(24)00278-X/abstract"
+    Press: "https://www.massgeneral.org/news/research-spotlight/patterns-prognostications-immune-related-adverse-events"
+- group: aim
+  year: 2024
+  featured: true
+  authors: "G. Wan, Z. Maliga, B. Yan, T. Vallius, Y. Shi, S. Khattab, C. Chang, A. J. Nirmal, K-H Yu, D. Liu, C. G. Lian, M. S. DeSimone, P. K. Sorger, Y. R. Semenov"
+  title: "SpatialCells: automated profiling of tumor microenvironments with spatially resolved multiplexed single-cell data"
+  venue: "Briefings in Bioinformatics"
+  links:
+    Paper: "https://academic.oup.com/bib/article/25/3/bbae189/7663435"
+    Code: "https://semenovlab.github.io/SpatialCells/"
+- group: aim
+  year: 2024
+  authors: "Y. An, X. Liu, H. Chen, G. Wan"
+  title: "Identification of breast cancer subtypes based on graph convolutional network"
+  venue: "Journal of Biomedical Engineering"
+- group: aim
+  year: 2023
+  featured: true
+  authors: "G. Wan, M. Jiao, et al."
+  title: "Electrophysiological brain source imaging via combinatorial search with provable optimality"
+  venue: "AAAI"
+  links:
+    Paper: "https://ojs.aaai.org/index.php/AAAI/article/view/26471"
+- group: aim
+  year: 2023
+  authors: "G. Wan, B. Leung, et al."
+  title: "Development and validation of time-to-event models to predict metastatic recurrence of localized cutaneous melanoma"
+  venue: "JAAD"
+  links:
+    Paper: "https://www.sciencedirect.com/science/article/pii/S0190962223028815"
+- group: aim
+  year: 2023
+  equal: true
+  authors: "B. Leung*, G. Wan*, et al."
+  title: "Increased risk of cutaneous immune-related adverse events in patients treated with talimogene laherparepvec and immune checkpoint inhibitors: A multi-hospital cohort study"
+  venue: "JAAD"
+  links:
+    Paper: "https://www.sciencedirect.com/science/article/pii/S0190962223002682"
+- group: aim
+  year: 2023
+  equal: true
+  authors: "N. Nguyen*, G. Wan*, et al."
+  title: "Influence of melanoma type on incidence and downstream implications of cutaneous immune-related adverse events in the setting of immune checkpoint inhibitor therapy"
+  venue: "JAAD"
+  links:
+    Paper: "https://www.sciencedirect.com/science/article/abs/pii/S0190962223002049"
+- group: aim
+  year: 2023
+  equal: true
+  authors: "S. Zhang*, K. Tang*, G. Wan*, et al."
+  title: "Cutaneous immune-related adverse events are associated with longer overall survival in advanced cancer patients on immune checkpoint inhibitors: a multi-institutional cohort study"
+  venue: "JAAD"
+  links:
+    Paper: "https://www.sciencedirect.com/science/article/pii/S0190962223001536"
+- group: aim
+  year: 2022
+  authors: "G. Wan, N. Nguyen, F. Liu, et al."
+  title: "Prediction of early-stage melanoma recurrence using clinical and histopathologic features"
+  venue: "npj Precision Oncology"
+  links:
+    Paper: "https://www.nature.com/articles/s41698-022-00321-4"
+- group: aim
+  year: 2022
+  equal: true
+  authors: "F. Liu*, G. Wan*, Y. R. Semenov, P. L. Purdon"
+  title: "Extended electrophysiological source imaging with spatial graph filters"
+  venue: "MICCAI"
+  links:
+    Paper: "https://link.springer.com/chapter/10.1007/978-3-031-16431-6_10"
+- group: aim
+  year: 2022
+  authors: "M. Jiao, G. Wan, Y. Guo, et al."
+  title: "A graph Fourier transform based bidirectional long short-term memory neural network for electrophysiological source imaging"
+  venue: "Frontiers in Neuroscience"
+  links:
+    Paper: "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2022.867466/full"
+- group: aim
+  year: 2022
+  authors: "Q. Wang, F. Liu, G. Wan, Y. Chen"
+  title: "Inference of brain states under anesthesia with meta learning based deep learning models"
+  venue: "IEEE Transactions on Neural Systems and Rehabilitation Engineering"
+  links:
+    Paper: "https://ieeexplore.ieee.org/abstract/document/9755157"
+
+- group: graph
+  year: 2024
+  authors: "G. Wan, B. He, H. Schweitzer"
+  title: "The art of centering without centering for robust principal component analysis"
+  venue: "Data Mining and Knowledge Discovery"
+  links:
+    Paper: "https://personal.utdallas.edu/~haim/publications/biastrick.pdf"
+- group: graph
+  year: 2024
+  authors: "G. Wan, H. Schweitzer"
+  title: "Spectral pursuit for simultaneous sparse representation with accuracy guarantees"
+  venue: "International Journal of Data Science and Analytics"
+  links:
+    Paper: "https://link.springer.com/article/10.1007/s41060-023-00480-y"
+- group: graph
+  year: 2021
+  authors: "G. Wan, H. Schweitzer"
+  title: "Heuristic search for approximating one matrix in terms of another matrix"
+  venue: "IJCAI"
+  links:
+    Paper: "https://personal.utdallas.edu/~haim/publications/ijcai21.pdf"
+    Code: "https://github.com/cwanlab/AStarXY"
+- group: graph
+  year: 2021
+  authors: "G. Wan, H. Schweitzer"
+  title: "Edge sparsification for graphs via meta-learning"
+  venue: "ICDE"
+  links:
+    Paper: "https://ieeexplore.ieee.org/abstract/document/9458885"
+- group: graph
+  year: 2021
+  authors: "G. Wan, H. Schweitzer"
+  title: "Accelerated combinatorial search for outlier detection with provable bounds on sub-optimality"
+  venue: "AAAI"
+  links:
+    Paper: "https://ojs.aaai.org/index.php/AAAI/article/view/17475"
+- group: graph
+  year: 2021
+  authors: "G. Wan, H. Schweitzer"
+  title: "A lookahead algorithm for robust subspace recovery"
+  venue: "ICDM"
+  links:
+    Paper: "https://ieeexplore.ieee.org/abstract/document/9679069"
+- group: graph
+  year: 2020
+  authors: "G. Wan, C. Maung, C. Zhang, H. Schweitzer"
+  title: "Fast distance metrics in low-dimensional space for neighbor search problems"
+  venue: "ICDM"
+  links:
+    Paper: "https://ieeexplore.ieee.org/abstract/document/9338319"
+
+- group: clinical
+  year: 2025
+  equal: true
+  authors: "S. Khattab*, G. Wan*, et al."
+  title: "Long-term mortality outcomes among immunotherapy recipients treated with dupilumab for the management of cutaneous immune-related adverse events"
+  venue: "Journal for ImmunoTherapy of Cancer"
+  links:
+    Paper: "https://jitc.bmj.com/content/13/5/e010638"
+- group: clinical
+  year: 2024
+  authors: "G. Wan, S. Khattab, B. Leung, et al."
+  title: "Cancer type and histology influence cutaneous immunotherapy toxicities: a multi-institutional cohort study"
+  venue: "British Journal of Dermatology"
+  links:
+    Paper: "https://academic.oup.com/bjd/advance-article-abstract/doi/10.1093/bjd/ljae053/7608988"
+- group: clinical
+  year: 2024
+  authors: "H. Rashdan, S. Zhang, G. Wan, N. Nguyen, K. Roster, A. Rajeh, K. Tang, W. Chen, C. Moseley, S. Chen, N. LeBoeuf, Y. R. Semenov"
+  title: "Timing of cutaneous immune-related adverse events impacts survival in patients with cancer treated with immune-checkpoint inhibitors: A multi-institutional cohort study"
+  venue: "Journal of the American Academy of Dermatology"
+  links:
+    Paper: "https://doi.org/10.1016/j.jaad.2024.01.038"
+- group: clinical
+  year: 2024
+  authors: "K. Tang, A. Rajeh, K. S. Shaw, N. Nguyen, G. Wan, K. B. Hashemi, R. L. Castillo, S. G. Kwatra, N. R. LeBoeuf, R. A. Vleugels, Y. R. Semenov"
+  title: "De novo autoimmune connective tissue disease and mortality in patients treated with anti-programmed death receptor-1 and anti-programmed death-ligand 1 therapy: a population-level cohort study"
+  venue: "British Journal of Dermatology"
+  links:
+    Paper: "https://doi.org/10.1093/bjd/ljae184"
+- group: clinical
+  year: 2023
+  equal: true
+  authors: "C. Vasavda*, G. Wan*, et al."
+  title: "A polygenic risk score for predicting racial and genetic susceptibility to prurigo nodularis"
+  venue: "Journal of Investigative Dermatology"
+  links:
+    Paper: "https://www.sciencedirect.com/science/article/pii/S0022202X23021255"
