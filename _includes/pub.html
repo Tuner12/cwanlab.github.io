@@ -1,0 +1,12 @@
+{% assign p = include.p %}
+{% assign v = p.title | size | modulo: 3 %}
+{% assign slug = p.title | slugify | truncate: 40, "" %}
+<li class="pub" data-tag="{{ p.group }}">
+  <img class="thumb" src="{{ '/images/thumbs/' | append: slug | append: '.svg' | relative_url }}" onerror="this.onerror=null;this.src='{{ '/images/thumb-' | append: p.group | append: '-' | append: v | append: '.svg' | relative_url }}'" alt="" loading="lazy" width="112" height="72">
+  <div>
+    <p class="pub-title">{{ p.title }}</p>
+    <p class="pub-authors">{{ p.authors | replace: "G. Wan", "<strong>G. Wan</strong>" }}</p>
+    <p class="pub-venue"><em>{{ p.venue }}</em>, {{ p.year }}{% if p.equal %} · <span class="muted">*equal contribution</span>{% endif %}</p>
+    {% if p.links %}<p class="pub-links">{% for l in p.links %}{% unless forloop.first %} | {% endunless %}<a href="{{ l[1] }}">{{ l[0] }}</a>{% endfor %}</p>{% endif %}
+  </div>
+</li>

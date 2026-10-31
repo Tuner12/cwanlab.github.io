@@ -1,13 +1,3 @@
-// Mobile nav
-const toggle = document.querySelector('.nav-toggle');
-const links = document.getElementById('nav-links');
-if (toggle && links) {
-  toggle.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-  });
-}
-
 // Chip filters + search (News, Publications)
 document.querySelectorAll('.filters').forEach((bar) => {
   const items = [...document.querySelectorAll(bar.dataset.filterTarget)];
@@ -28,9 +18,8 @@ document.querySelectorAll('.filters').forEach((bar) => {
     document.querySelectorAll('.pub-group').forEach((g) => {
       g.hidden = !g.querySelector('.pub:not([hidden])');
     });
-    document.querySelectorAll('h2.year').forEach((h) => {
-      const list = h.nextElementSibling;
-      h.hidden = list && !list.querySelector('.news-item:not([hidden])');
+    document.querySelectorAll('.year-head + .news').forEach((list) => {
+      list.previousElementSibling.hidden = !list.querySelector('.news-item:not([hidden])');
     });
     const empty = document.querySelector('.empty');
     if (empty) empty.hidden = shown > 0;
@@ -44,15 +33,39 @@ document.querySelectorAll('.filters').forEach((bar) => {
   search?.addEventListener('input', apply);
 });
 
-// Lab Life: highlight current section in the table of contents
-const tocLinks = [...document.querySelectorAll('.toc a')];
-if (tocLinks.length && 'IntersectionObserver' in window) {
-  const targets = tocLinks.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (!e.isIntersecting) return;
-      tocLinks.forEach((a) => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
+// Logo: like the IDL mark, a touch makes the cells burst outward from the centre
+// and spring straight back; a faint ghost copy stays put underneath.
+const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.logo-cw').forEach((svg) => {
+  const [, , w, h] = svg.getAttribute('viewBox').split(' ').map(Number);
+  const dots = [...svg.querySelectorAll('circle.d')].map((el) => ({
+    el, x: +el.getAttribute('cx') - w / 2, y: +el.getAttribute('cy') - h / 2, dx: 0, dy: 0,
+  }));
+  const RISE = 60, FALL = 320;
+  let start = 0, frame = 0, last = 0;
+
+  const step = (now) => {
+    const t = now - start;
+    // quick ease-out to the peak, then an ease-out-cubic return
+    const k = t < RISE ? 1 - (1 - t / RISE) ** 2 : Math.max(0, 1 - (t - RISE) / FALL) ** 3;
+    dots.forEach((d) => d.el.setAttribute('transform', k ? `translate(${(d.dx * k).toFixed(2)} ${(d.dy * k).toFixed(2)})` : ''));
+    frame = t < RISE + FALL ? requestAnimationFrame(step) : 0;
+  };
+
+  const burst = () => {
+    const now = performance.now();
+    if (still || now - last < 280) return;
+    last = now;
+    dots.forEach((d) => {
+      const s = 0.15 + Math.random() * 0.45;          // push 1.15–1.6x out from the centre
+      d.dx = d.x * s + (Math.random() - 0.5) * 10;    // plus a little jitter
+      d.dy = d.y * s * 1.6 + (Math.random() - 0.5) * 10;
     });
-  }, { rootMargin: '-80px 0px -70% 0px' });
-  targets.forEach((t) => io.observe(t));
-}
+    start = now;
+    if (!frame) frame = requestAnimationFrame(step);
+  };
+
+  const host = svg.closest('a') || svg;
+  host.addEventListener('pointerenter', burst);
+  host.addEventListener('pointermove', burst);
+});

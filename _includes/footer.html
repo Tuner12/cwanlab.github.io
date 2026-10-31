@@ -1,15 +1,8 @@
 <footer class="site-foot">
-  <div class="wrap foot-inner">
-    <div>
-      <p class="foot-title">{{ site.title }} <span>{{ site.title_zh }}</span></p>
-      <p>{{ site.affiliation }}</p>
-    </div>
-    <div class="foot-links">
-      <a href="mailto:{{ site.pi.email }}">Email</a>
-      <a href="{{ site.pi.scholar }}">Google Scholar</a>
-      <a href="https://github.com/{{ site.pi.github }}">GitHub</a>
-      <a href="{{ '/lab-life/' | relative_url }}">Lab Life</a>
-    </div>
-  </div>
-  <div class="wrap foot-small">© {{ site.time | date: "%Y" }} {{ site.title }}. Built with Jekyll on GitHub Pages.</div>
+  <span>{{ site.title }} · {{ site.title_zh }} · {{ site.affiliation }}</span>
+  <span class="foot-links">
+    <a href="mailto:{{ site.pi.email }}">Email</a>
+    <a href="{{ site.pi.scholar }}">Google Scholar</a>
+    <a href="https://github.com/{{ site.pi.github }}">GitHub</a>
+  </span>
 </footer>

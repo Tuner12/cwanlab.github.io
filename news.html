@@ -1,8 +1,6 @@
 ---
 title: News
 permalink: /news/
-eyebrow: What's new
-lede: Papers, awards, talks, and people — newest first.
 ---
 <div class="filters" data-filter-target=".news-item" role="group" aria-label="Filter news">
   <button class="chip" aria-pressed="true" data-filter="all">All</button>
@@ -11,19 +9,20 @@ lede: Papers, awards, talks, and people — newest first.
   <button class="chip" aria-pressed="false" data-filter="talk">Talks</button>
   <button class="chip" aria-pressed="false" data-filter="funding">Funding</button>
   <button class="chip" aria-pressed="false" data-filter="people">People</button>
+  <button class="chip" aria-pressed="false" data-filter="press">Press</button>
 </div>
 {% assign last_year = "" %}
 {% for n in site.data.news %}
   {% assign y = n.date | split: " " | last %}
   {% if y != last_year %}
     {% unless forloop.first %}</ol>{% endunless %}
-    <h2 class="year">{{ y }}</h2>
+    <h3 class="year-head">{{ y }}</h3>
     <ol class="news">
     {% assign last_year = y %}
   {% endif %}
   <li class="news-item" data-tag="{{ n.tag }}">
     <time>{{ n.date }}</time>
-    <div><span class="tag tag-{{ n.tag }}">{{ n.tag }}</span> {{ n.text | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+    <p>{{ n.text | markdownify | remove: '<p>' | remove: '</p>' }}</p>
   </li>
   {% if forloop.last %}</ol>{% endif %}
 {% endfor %}

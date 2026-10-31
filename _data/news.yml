@@ -5,7 +5,7 @@
   tag: paper
   text: 'Our paper "Toward Personalized Sleep Guidance from Wearable Data Using Language Models" has been accepted by **Machine Learning for Health (ML4H) 2026**.'
 - date: "Oct 2026"
-  tag: talk
+  tag: people
   text: "Dr. Wan will serve as a grant reviewer for the DOD."
 - date: "Sep 2026"
   tag: talk
@@ -94,7 +94,7 @@
   tag: paper
   text: 'Our paper "Identification of breast cancer subtypes based on graph convolutional network" has been published by the **Journal of Biomedical Engineering**!'
 - date: "Feb 1, 2024"
-  tag: award
+  tag: people
   text: "Dr. Wan has been promoted to **Instructor at Harvard Medical School**!"
 
 - date: "Nov 14, 2023"
@@ -141,7 +141,7 @@
   tag: paper
   text: 'Our paper "Electrophysiological Brain Source Imaging via Combinatorial Search with Provable Optimality" has been accepted by **AAAI 2023**! [Paper](https://ojs.aaai.org/index.php/AAAI/article/view/26471)'
 - date: "Nov 4, 2022"
-  tag: talk
+  tag: press
   text: "Our research was featured in [The Harvard Gazette](https://news.harvard.edu/gazette/story/2022/11/ai-tool-predicts-melanoma-survivors-risk-of-recurrence/)."
 - date: "Oct 16, 2022"
   tag: award

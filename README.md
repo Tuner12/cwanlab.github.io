@@ -14,13 +14,15 @@ Almost everything lives in `_data/` — edit the YAML and push.
 | Research themes & publication groups | `_data/research.yml` |
 | Members & alumni | `_data/members.yml` (add `photo:` to replace initials) |
 | Funding | `_data/funding.yml` |
-| Lab rhythm, activities & meals, onboarding | `_data/lablife.yml` |
-| Lab guidelines text | `lab-life.html` |
 | Talks & teaching | `talks.md` |
 | PI bio / CV | `cv.md` |
 | Site name, PI info, navigation | `_config.yml` |
 
-Activities marked `draft: true` show a "Draft" badge until the PI confirms them.
+After adding a publication, regenerate its thumbnail (and the logo/banner art):
+
+```bash
+python3 scripts/make_art.py images
+```
 
 ## Preview locally
 

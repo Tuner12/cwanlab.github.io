@@ -1,82 +1,55 @@
 ---
 layout: default
 title: Home
-body_class: home
 redirect_from:
   - /about/
   - /about.html
 ---
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">{{ site.affiliation }}</p>
-      <h1>{{ site.title }} <span class="zh">{{ site.title_zh }}</span></h1>
-      <p class="hero-tag">{{ site.tagline }}</p>
-      <p class="hero-text">At CWan Lab (pronounced “Wan Lab”), we advance the foundations of artificial intelligence and machine learning to address key challenges in health, with a focus on spatially resolved biomedical data. Our work bridges algorithmic innovation and real-world application, developing biologically interpretable and clinically impactful models that uncover disease mechanisms and drive personalized medicine.</p>
-      <div class="hero-cta">
-        <a class="btn" href="{{ '/publications/' | relative_url }}">Explore our research</a>
-        <a class="btn ghost" href="#join">Join us</a>
-      </div>
-    </div>
-    <div class="hero-art" aria-hidden="true">
-      <img src="{{ '/images/hero-cells.svg' | relative_url }}" alt="">
-    </div>
-  </div>
-</section>
+<p class="mission"><span class="caps">Our mission</span> is to advance the foundations of <strong>artificial intelligence and machine learning</strong> to address key challenges in health, with a focus on <strong>spatially resolved biomedical data</strong> — building <strong>biologically interpretable</strong> and <strong>clinically impactful</strong> models that uncover disease mechanisms and drive personalized medicine.</p>
 
-<section class="section">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Research themes</h2>
-      <a class="more" href="{{ '/publications/' | relative_url }}">Publications →</a>
-    </div>
-    <div class="grid-3">
-      {% for t in site.data.research.themes %}
-      <article class="card theme theme-{{ forloop.index }}">
-        <span class="theme-num">0{{ forloop.index }}</span>
-        <h3>{{ t.title }}</h3>
-        <p class="muted">{{ t.blurb }}</p>
-        <ul class="ticks">
-          {% for i in t.items %}<li>{{ i }}</li>{% endfor %}
-        </ul>
-      </article>
+<figure class="banner">
+  <img src="{{ '/images/banner-cells.svg' | relative_url }}" alt="">
+  <a class="banner-cap" href="{{ '/publications/' | relative_url }}">Graph learning · Spatial biology · Clinical AI</a>
+</figure>
+
+<div class="themes">
+  {% for t in site.data.research.themes %}
+  <div class="theme t-{{ t.id }}">
+    <h3><span class="dot"></span>{{ t.title }}</h3>
+    <p>{{ t.blurb }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+<p class="recruit"><strong>We're recruiting</strong> postdoctoral researchers and research assistants in AI, LLMs and spatial biology for cancer and precision health — UChicago students interested in research are welcome too. <a href="mailto:{{ site.pi.email }}?subject=Joining%20CWan%20Lab">Get in touch →</a></p>
+
+<div class="home-cols">
+  <section>
+    <h2 class="caps-head">Recent publications <a class="head-link" href="{{ '/publications/' | relative_url }}">(view all papers)</a></h2>
+    {% assign recent = site.data.publications | sort: "year" | reverse %}
+    {% assign last_year = "" %}
+    {% for p in recent limit: 6 %}
+      {% assign y = p.year | append: "" %}
+      {% if y != last_year %}
+        {% unless forloop.first %}</ol>{% endunless %}
+        <h3 class="year-head">{{ y }}</h3>
+        <ol class="pubs">
+        {% assign last_year = y %}
+      {% endif %}
+      {% include pub.html p=p %}
+      {% if forloop.last %}</ol>{% endif %}
+    {% endfor %}
+  </section>
+
+  <aside class="updates">
+    <h2 class="caps-head">Updates <a class="head-link" href="{{ '/news/' | relative_url }}">(all)</a></h2>
+    <ol>
+      {% for n in site.data.news limit: 8 %}
+      <li data-tag="{{ n.tag }}">
+        <time>{{ n.date }}</time>
+        <p>{{ n.text | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+      </li>
       {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section alt">
-  <div class="wrap news-grid">
-    <div>
-      <div class="section-head">
-        <h2>Latest news</h2>
-        <a class="more" href="{{ '/news/' | relative_url }}">All news →</a>
-      </div>
-      <ol class="news">
-        {% for n in site.data.news limit: 6 %}{% include news-item.html n=n %}{% endfor %}
-      </ol>
-    </div>
-    <aside class="side">
-      <div class="card pi-card">
-        <img src="{{ site.pi.photo | relative_url }}" alt="{{ site.pi.name }}" width="96" height="96">
-        <div>
-          <p class="label">Principal Investigator</p>
-          <h3>{{ site.pi.name }}</h3>
-          <p class="muted small">{{ site.pi.title }}, {{ site.pi.employer }}<br>{{ site.pi.note }}</p>
-          <p class="small"><a href="{{ '/cv/' | relative_url }}">About the PI →</a></p>
-        </div>
-      </div>
-      <div class="card join" id="join">
-        <p class="label">We're recruiting</p>
-        <p>We are actively recruiting <strong>postdoctoral researchers</strong> and <strong>research assistants</strong> with expertise in Artificial Intelligence, Large Language Models, and Spatial Biology, particularly as applied to cancer and precision health.</p>
-        <p>We also welcome <strong>UChicago students</strong> interested in research to join the lab.</p>
-        <a class="btn small" href="mailto:{{ site.pi.email }}?subject=Joining%20CWan%20Lab">Get in touch</a>
-      </div>
-      <div class="card support">
-        <p class="label">Supported by</p>
-        <p class="muted small">NIH / NCI · CDMRP · Melanoma Research Alliance · MGH ECOR</p>
-        <p class="small"><a href="{{ '/funding/' | relative_url }}">Funding →</a></p>
-      </div>
-    </aside>
-  </div>
-</section>
+    </ol>
+  </aside>
+</div>

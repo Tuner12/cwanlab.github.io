@@ -1,19 +1,14 @@
 ---
 title: Funding
 permalink: /funding/
-eyebrow: Support
-lede: Our work is made possible by the following awards.
 ---
-<ol class="timeline">
+<ol class="funding">
   {% for f in site.data.funding %}
-  <li class="card fund{% if f.active %} active{% endif %}">
-    <div class="fund-top">
-      <p class="label">{{ f.sponsor }}</p>
-      <span class="status">{% if f.active %}Active{% else %}Completed{% endif %}</span>
-    </div>
+  <li>
+    <p class="fund-meta"><span class="caps">{{ f.sponsor }}</span>{% if f.active %}<span class="status">Active</span>{% endif %}</p>
     <h3>{{ f.award }}</h3>
     <p>{{ f.project }}</p>
-    <p class="muted small">{{ f.role }}: Guihong Wan · {{ f.period }}</p>
+    <p class="muted"><em>{{ f.role }}: Guihong Wan · {{ f.period }}</em></p>
   </li>
   {% endfor %}
 </ol>

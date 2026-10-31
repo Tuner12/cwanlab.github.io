@@ -13,9 +13,10 @@ baseurl: "/cwanlab.github.io"
 title: "CWan Lab"
 title_zh: "常万实验室"
 tagline: "Artificial Intelligence, Machine Learning, and Spatial Biology in Precision Medicine"
+tagline_short: "AI + Spatial Biology + Precision Medicine"
 description: "CWan Lab develops AI/ML methods for spatial biology and precision oncology at the University of Chicago."
 lang: en
-logo: /images/site-logo.png
+logo: /images/logo-cw.svg   # dot-grid "cw" mark; original monogram kept at images/site-logo.png
 
 affiliation: "Institute for Population and Precision Health · University of Chicago"
 
@@ -41,8 +42,6 @@ nav:
     url: /funding/
   - title: People
     url: /group/
-  - title: Lab Life
-    url: /lab-life/
   - title: About PI
     url: /cv/
 
@@ -66,4 +65,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - scripts
   - .DS_Store

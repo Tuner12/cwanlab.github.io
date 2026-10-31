@@ -3,19 +3,14 @@ title: About the PI
 permalink: /cv/
 redirect_from:
   - /resume/
-eyebrow: Principal Investigator
 ---
 
-<div class="card pi-wide">
-  <img src="{{ site.pi.photo | relative_url }}" alt="{{ site.pi.name }}" width="140" height="140">
+<div class="member pi">
+  <img class="portrait" src="{{ site.pi.photo | relative_url }}" alt="{{ site.pi.name }}" width="160" height="160">
   <div>
-    <h2>{{ site.pi.name }}</h2>
-    <p class="muted">{{ site.pi.title }}, Institute for Population and Precision Health, {{ site.pi.employer }}<br>{{ site.pi.note }}</p>
-    <p class="pill-links">
-      <a href="mailto:{{ site.pi.email }}">{{ site.pi.email }}</a>
-      <a href="{{ site.pi.scholar }}">Google Scholar</a>
-      <a href="https://github.com/{{ site.pi.github }}">GitHub</a>
-    </p>
+    <h3>{{ site.pi.name }}</h3>
+    <p class="role">{{ site.pi.title }}, Institute for Population and Precision Health, {{ site.pi.employer }}<br>{{ site.pi.note }}</p>
+    <p class="pub-links"><a href="mailto:{{ site.pi.email }}">{{ site.pi.email }}</a> | <a href="{{ site.pi.scholar }}">Google Scholar</a> | <a href="https://github.com/{{ site.pi.github }}">GitHub</a></p>
   </div>
 </div>
 
