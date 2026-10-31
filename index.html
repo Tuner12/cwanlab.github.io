@@ -23,6 +23,25 @@ redirect_from:
 
 <p class="recruit"><strong>We're recruiting</strong> postdoctoral researchers and research assistants in AI, LLMs and spatial biology for cancer and precision health — UChicago students interested in research are welcome too. <a href="mailto:{{ site.pi.email }}?subject=Joining%20CWan%20Lab">Get in touch →</a></p>
 
+<section class="featured">
+  <h2 class="caps-head">Selected papers</h2>
+  {% assign picks = site.data.publications | where_exp: "p", "p.feature" | sort: "feature.order" %}
+  <div class="feature-grid">
+    {% for p in picks %}
+    {% assign link = p.links.Paper | default: p.links.first[1] %}
+    <article class="feature-card">
+      <a class="feature-img{% if p.feature.credit %} is-figure{% endif %}" href="{{ link }}" tabindex="-1" aria-hidden="true">
+        <img src="{{ p.feature.image | relative_url }}" alt="{{ p.feature.alt }}" loading="lazy">
+      </a>
+      <p class="feature-venue"><span class="dot t-{{ p.group }}"></span>{{ p.venue }} · {{ p.year }}</p>
+      <h3><a href="{{ link }}">{{ p.title }}</a></h3>
+      <p class="feature-blurb">{{ p.feature.blurb }}</p>
+      {% if p.feature.credit %}<p class="feature-credit">{{ p.feature.credit }}</p>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
 <div class="home-cols">
   <section>
     <h2 class="caps-head">Recent publications <a class="head-link" href="{{ '/publications/' | relative_url }}">(view all papers)</a></h2>

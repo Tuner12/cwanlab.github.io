@@ -3,18 +3,27 @@
 
 - group: aim
   year: 2024
-  featured: true
   authors: "G. Wan, W. Chen, S. Khattab, K. Roster, N. Nguyen, B. Yan, A. Rajeh, J. Seo, H. Rashdan, L. Zubiri, M. J. Hadfield, S. Demehri, K-H Yu, W. Lotter, A. Gusev, N. R. LeBoeuf, K. L. Reynolds, S. G. Kwatra, Y. R. Semenov"
   title: "Multi-organ immune-related adverse events from immune checkpoint inhibitors and their downstream implications: a retrospective multicohort study"
+  feature:
+    order: 3
+    blurb: "A multicohort study of immune checkpoint inhibitor recipients that groups patients by how immune-related adverse events co-occur across organs and examines the downstream implications."
+    image: /images/featured/lancet-irae-clusters.svg
+    alt: ""
   venue: "The Lancet Oncology"
   links:
     Paper: "https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(24)00278-X/abstract"
     Press: "https://www.massgeneral.org/news/research-spotlight/patterns-prognostications-immune-related-adverse-events"
 - group: aim
   year: 2024
-  featured: true
   authors: "G. Wan, Z. Maliga, B. Yan, T. Vallius, Y. Shi, S. Khattab, C. Chang, A. J. Nirmal, K-H Yu, D. Liu, C. G. Lian, M. S. DeSimone, P. K. Sorger, Y. R. Semenov"
   title: "SpatialCells: automated profiling of tumor microenvironments with spatially resolved multiplexed single-cell data"
+  feature:
+    order: 1
+    blurb: "An open-source toolkit for region-based analysis of spatially resolved multiplexed single-cell data."
+    image: /images/featured/spatialcells-fig1.jpg
+    alt: "SpatialCells framework: spatial functions, measurements and visualization feeding association and prediction of patient outcomes"
+    credit: 'Fig. 1 from Wan et al., <i>Briefings in Bioinformatics</i> 2024, doi:10.1093/bib/bbae189. © The Author(s) 2024, <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.'
   venue: "Briefings in Bioinformatics"
   links:
     Paper: "https://academic.oup.com/bib/article/25/3/bbae189/7663435"
@@ -26,9 +35,13 @@
   venue: "Journal of Biomedical Engineering"
 - group: aim
   year: 2023
-  featured: true
   authors: "G. Wan, M. Jiao, et al."
   title: "Electrophysiological brain source imaging via combinatorial search with provable optimality"
+  feature:
+    order: 2
+    blurb: "Casts brain source imaging as a graph search and solves it with an A*-based algorithm that is guaranteed to find the optimal solution."
+    image: /images/featured/aaai-esi-placeholder.svg
+    alt: ""
   venue: "AAAI"
   links:
     Paper: "https://ojs.aaai.org/index.php/AAAI/article/view/26471"

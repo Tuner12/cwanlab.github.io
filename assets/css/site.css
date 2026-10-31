@@ -92,6 +92,20 @@ strong, b { font-weight: 700; }
 .recruit::before { content: ""; position: absolute; left: 16px; top: 20px; width: 7px; height: 7px; border-radius: 50%; background: var(--maroon); }
 .recruit strong, .recruit a { color: var(--maroon); }
 
+.featured { margin-top: 48px; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.feature-img { display: block; aspect-ratio: 16 / 10; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 12px; }
+.feature-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.feature-img.is-figure img { object-fit: contain; padding: 8px; }   /* reused figures are shown whole, never cropped */
+.feature-card:hover .feature-img img { transform: scale(1.02); }
+.feature-venue { display: flex; gap: 8px; align-items: center; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.feature-venue .dot { transform: none; width: 7px; height: 7px; }
+.feature-card h3 { font-size: 16px; font-weight: 700; line-height: 1.4; margin-bottom: 6px; }
+.feature-card h3 a { color: var(--ink); text-decoration: none; }
+.feature-card h3 a:hover { color: var(--maroon); }
+.feature-blurb { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin-bottom: 6px; }
+.feature-credit { font-size: 11.5px; line-height: 1.45; color: var(--muted); margin: 0; }
+.feature-credit a { color: var(--muted); }
 .home-cols { display: grid; grid-template-columns: minmax(0, 1fr) 224px; gap: 44px; margin-top: 48px; }
 .updates ol { list-style: none; padding: 0; margin: 0; }
 .updates li { margin-bottom: 16px; font-size: 15px; line-height: 1.55; }
@@ -215,6 +229,7 @@ strong, b { font-weight: 700; }
   .masthead-logo { display: block; }
   .home-cols, .cv-grid, .tutorials { grid-template-columns: 1fr; gap: 0; }
   .themes { grid-template-columns: 1fr; gap: 16px; }
+  .feature-grid { grid-template-columns: 1fr; gap: 32px; }
   .members { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; }
 }
 @media (max-width: 560px) {

@@ -61,3 +61,16 @@ def field(w, h, centers, n, seed, cols, edge=40, stroke="#b3aaa5", m=14, accents
 pastel = ["#ecbfc3", "#b2d0ed", "#add7c4", "#e2c7a8", "#d8c3e5"]
 centers = [(70, 150, 0), (190, 80, 0), (300, 160, 0), (440, 90, 1), (540, 170, 1), (640, 80, 1), (770, 150, 2), (870, 70, 2), (950, 170, 2)]
 open(os.path.join(out, "banner-cells.svg"), "w").write(field(1000, 232, centers, 22, 11, pastel, sigma=40, accents=(3, 4)))
+
+# ---- featured-paper art (used where we don't reuse a figure from the paper) ----
+os.makedirs(os.path.join(out, "featured"), exist_ok=True)
+# Lancet Oncology 2024: patients fall into seven irAE clusters -> seven soft cell niches
+seven = ["#ecbfc3", "#b2d0ed", "#add7c4", "#e2c7a8", "#d8c3e5", "#c9d7e8", "#f0d3c9"]
+ring = [(240 + 150 * math.cos(a), 150 + 92 * math.sin(a), i)
+        for i, a in enumerate(math.radians(-90 + k * 360 / 7) for k in range(7))]
+open(os.path.join(out, "featured", "lancet-irae-clusters.svg"), "w").write(
+    field(480, 300, ring, 26, 31, seven, edge=30, sigma=24))
+# AAAI 2023 placeholder until the paper's Fig 1 is added: one dense "source" niche in a sparse field
+src = ["#b2d0ed", "#94b0cf", "#ecbfc3"]
+open(os.path.join(out, "featured", "aaai-esi-placeholder.svg"), "w").write(
+    field(480, 300, [(170, 140, 0), (300, 170, 1), (240, 110, 2), (360, 90, 0), (110, 220, 1)], 22, 41, src, edge=30, sigma=30))
