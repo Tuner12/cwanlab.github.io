@@ -18,7 +18,7 @@ Almost everything lives in `_data/` — edit the YAML and push.
 | PI bio / CV | `cv.md` |
 | Site name, PI info, navigation | `_config.yml` |
 
-After adding a publication, regenerate its thumbnail (and the logo/banner art):
+To regenerate the logo and banner art:
 
 ```bash
 python3 scripts/make_art.py images

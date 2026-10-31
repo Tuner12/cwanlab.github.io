@@ -1,8 +1,6 @@
 {% assign p = include.p %}
-{% assign v = p.title | size | modulo: 3 %}
-{% assign slug = p.title | slugify | truncate: 40, "" %}
 <li class="pub" data-tag="{{ p.group }}">
-  <img class="thumb" src="{{ '/images/thumbs/' | append: slug | append: '.svg' | relative_url }}" onerror="this.onerror=null;this.src='{{ '/images/thumb-' | append: p.group | append: '-' | append: v | append: '.svg' | relative_url }}'" alt="" loading="lazy" width="112" height="72">
+  <span class="dot t-{{ p.group }}" aria-hidden="true"></span>
   <div>
     <p class="pub-title">{{ p.title }}</p>
     <p class="pub-authors">{{ p.authors | replace: "G. Wan", "<strong>G. Wan</strong>" }}</p>

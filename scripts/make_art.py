@@ -1,6 +1,6 @@
-"""Generate the dot-grid logo, banner and publication thumbnails.
+"""Generate the dot-grid logo and the home-page banner.
 
-Run from the repo root after adding papers:  python3 scripts/make_art.py images
+Run from the repo root:  python3 scripts/make_art.py images
 """
 import math, random, sys, os, re, zlib
 out = sys.argv[1]
@@ -61,26 +61,3 @@ def field(w, h, centers, n, seed, cols, edge=40, stroke="#b3aaa5", m=14, accents
 pastel = ["#ecbfc3", "#b2d0ed", "#add7c4", "#e2c7a8", "#d8c3e5"]
 centers = [(70, 150, 0), (190, 80, 0), (300, 160, 0), (440, 90, 1), (540, 170, 1), (640, 80, 1), (770, 150, 2), (870, 70, 2), (950, 170, 2)]
 open(os.path.join(out, "banner-cells.svg"), "w").write(field(1000, 232, centers, 22, 11, pastel, sigma=40, accents=(3, 4)))
-
-# ---- theme thumbnails (one per publication group) ----
-themes = {
-    "aim":      (["#ecbfc3", "#d29aa1", "#e2c7a8"], 21),
-    "graph":    (["#b2d0ed", "#8aafd4", "#d8c3e5"], 22),
-    "clinical": (["#add7c4", "#86bba2", "#e2c7a8"], 23),
-}
-layouts = [[(40, 40, 0), (110, 50, 1), (80, 100, 2)],
-           [(30, 85, 0), (85, 35, 1), (130, 90, 2)],
-           [(80, 60, 0), (35, 30, 1), (125, 95, 2)]]
-for name, (cols, seed) in themes.items():
-    for k, ctr in enumerate(layouts):
-        open(os.path.join(out, f"thumb-{name}-{k}.svg"), "w").write(field(160, 120, ctr, 18, seed + 10 * k, cols, edge=26, m=8, grid=8))
-
-# ---- one thumbnail per paper (pub.html: p.title | slugify | truncate: 40, "") ----
-src = open(os.path.join(out, "..", "_data", "publications.yml")).read()
-os.makedirs(os.path.join(out, "thumbs"), exist_ok=True)
-for grp, title in re.findall(r'-\s*group:\s*(\w+).*?\n\s*title:\s*"(.*?)"', src, re.S):
-    slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:40]
-    cols, _ = themes[grp]; pr = random.Random(zlib.crc32(slug.encode()))
-    ctr = [(pr.uniform(30, 130), pr.uniform(25, 95), i) for i in range(3)]
-    open(os.path.join(out, "thumbs", slug + ".svg"), "w").write(field(160, 120, ctr, 18, zlib.crc32(slug.encode()), cols, edge=26, m=8, grid=8))
-print("ok")
