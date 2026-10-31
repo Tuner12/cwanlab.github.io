@@ -33,39 +33,52 @@ document.querySelectorAll('.filters').forEach((bar) => {
   search?.addEventListener('input', apply);
 });
 
-// Logo: like the IDL mark, a touch makes the cells burst outward from the centre
-// and spring straight back; a faint ghost copy stays put underneath.
+// Logo: modelled on the idl.uw.edu mark. Touching a letter cell pushes every cell
+// away from the cursor (nearer cells fly further), then they ease straight back.
+// A faint ghost copy stays in place underneath.
 const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.querySelectorAll('.logo-cw').forEach((svg) => {
-  const [, , w, h] = svg.getAttribute('viewBox').split(' ').map(Number);
   const dots = [...svg.querySelectorAll('circle.d')].map((el) => ({
-    el, x: +el.getAttribute('cx') - w / 2, y: +el.getAttribute('cy') - h / 2, dx: 0, dy: 0,
+    el, x: +el.getAttribute('cx'), y: +el.getAttribute('cy'), dx: 0, dy: 0,
   }));
-  const RISE = 60, FALL = 320;
-  let start = 0, frame = 0, last = 0;
+  const RISE = 45, FALL = 280;          // ms, measured on the IDL logo
+  const HIT = 6;                        // how close (in grid units) counts as touching a cell
+  let start = -1e9, frame = 0, onCell = false;
+
+  const local = (e) => new DOMPoint(e.clientX, e.clientY).matrixTransform(svg.getScreenCTM().inverse());
+  const nearest = (p) => Math.min(...dots.map((d) => Math.hypot(d.x - p.x, d.y - p.y)));
 
   const step = (now) => {
     const t = now - start;
-    // quick ease-out to the peak, then an ease-out-cubic return
-    const k = t < RISE ? 1 - (1 - t / RISE) ** 2 : Math.max(0, 1 - (t - RISE) / FALL) ** 3;
-    dots.forEach((d) => d.el.setAttribute('transform', k ? `translate(${(d.dx * k).toFixed(2)} ${(d.dy * k).toFixed(2)})` : ''));
+    const k = t < RISE ? 1 - (1 - t / RISE) ** 2          // ease out to the peak
+      : Math.max(0, 1 - (t - RISE) / FALL) ** 2;          // quadratic ease-out home
+    dots.forEach((d) => d.el.setAttribute('transform', k > 0.001 ? `translate(${(d.dx * k).toFixed(2)} ${(d.dy * k).toFixed(2)})` : ''));
     frame = t < RISE + FALL ? requestAnimationFrame(step) : 0;
   };
 
-  const burst = () => {
+  const burst = (p) => {
     const now = performance.now();
-    if (still || now - last < 280) return;
-    last = now;
+    if (still || now - start < RISE + FALL) return;
     dots.forEach((d) => {
-      const s = 0.15 + Math.random() * 0.45;          // push 1.15–1.6x out from the centre
-      d.dx = d.x * s + (Math.random() - 0.5) * 10;    // plus a little jitter
-      d.dy = d.y * s * 1.6 + (Math.random() - 0.5) * 10;
+      let vx = d.x - p.x, vy = d.y - p.y;
+      const dist = Math.hypot(vx, vy);
+      if (dist < 1) { const a = Math.random() * Math.PI * 2; vx = Math.cos(a); vy = Math.sin(a); }
+      else { vx /= dist; vy /= dist; }
+      const push = 37 / (1 + dist / 30) * (0.8 + Math.random() * 0.4);
+      d.dx = vx * push + (Math.random() - 0.5) * 3;
+      d.dy = vy * push + (Math.random() - 0.5) * 3;
     });
     start = now;
     if (!frame) frame = requestAnimationFrame(step);
   };
 
   const host = svg.closest('a') || svg;
-  host.addEventListener('pointerenter', burst);
-  host.addEventListener('pointermove', burst);
+  host.addEventListener('pointermove', (e) => {
+    const p = local(e);
+    const hit = nearest(p) < HIT;
+    if (hit && !onCell) burst(p);       // like IDL: fires on entering a cell
+    onCell = hit;
+  });
+  host.addEventListener('pointerleave', () => { onCell = false; });
+  host.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') burst(local(e)); });
 });
